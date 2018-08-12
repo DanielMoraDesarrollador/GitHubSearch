@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/gitfondo2">
+
+
+    <TextView
+        android:id="@+id/nombre_repo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:ellipsize="marquee"
+        android:focusable="false"
+        android:fontFamily="sans-serif-condensed"
+        android:letterSpacing="0.125"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="nombreRepo" />
+
+    <ImageView
+        android:id="@+id/imagen_estrella"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/nombre_repo"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/cantidad_estrellas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombre_repo"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/imagen_estrella"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+</RelativeLayout>
