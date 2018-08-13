@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gitfondo2"
+    tools:context=".view.FragmentDetalleRepo">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/gitfondo2">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorAccent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/imagen_detalle"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/placeholder"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5" />
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                android:background="@color/colorAccentTransparente"
+                app:layout_collapseMode="pin">
+
+                <TextView
+                    android:id="@+id/nombre_repo_detalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_marginLeft="?attr/actionBarSize"
+                    android:layout_marginRight="?attr/actionBarSize"
+                    android:background="@color/colorAccentTransparente"
+                    android:ellipsize="marquee"
+                    android:focusable="false"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:text="Nombre Repositorio" />
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/nombre_propietario"
+                style="@style/StyleTextoDetalles"
+                tools:text="Nombre propietario" />
+
+            <TextView
+                android:id="@+id/lenguaje"
+                style="@style/StyleTextoDetalles"
+                tools:text="lenguaje" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_star_gold_24dp"/>
+            <TextView
+                android:id="@+id/cantidad_estrellas_detalle"
+                style="@style/StyleTextoDetalles"
+                tools:text="cantidad de estrellas" />
+
+            <TextView
+                android:id="@+id/cantidad_forks_detalle"
+                style="@style/StyleTextoDetalles"
+                tools:text="cantidad de forks" />
+
+            <TextView
+                android:id="@+id/descripcion"
+                style="@style/StyleTextoDetalles"
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                tools:text="descripcion" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

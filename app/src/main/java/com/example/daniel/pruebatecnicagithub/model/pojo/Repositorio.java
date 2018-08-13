@@ -24,7 +24,7 @@ public class Repositorio implements Serializable {
     private String lenguaje;
 
     @SerializedName("forks_count")
-    private int cantidadDeForks;
+    private String cantidadDeForks;
 
     public Repositorio() {
     }
@@ -53,7 +53,7 @@ public class Repositorio implements Serializable {
         return lenguaje;
     }
 
-    public int getCantidadDeForks() {
+    public String getCantidadDeForks() {
         return cantidadDeForks;
     }
 

@@ -92,6 +92,12 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         return view;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        notificadorActivities= (NotificadorActivities) context;
+    }
+
     private void setAdapterLinear(RecyclerView recyclerView,
                                   LinearLayoutManager linearLayoutManager,
                                   RecyclerView.Adapter adapter) {

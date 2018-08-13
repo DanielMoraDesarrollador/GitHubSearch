@@ -94,7 +94,7 @@ public class AdapterBusqueda extends RecyclerView.Adapter {
 
         public void armarCelda(Repositorio repositorio) {
             nombre.setText(repositorio.getNombreRepo());
-            cantidadDeEstrellas.setText(repositorio.getCantidadDeEstrellas());
+            cantidadDeEstrellas.setText(repositorio.getCantidadDeEstrellas() + " Estrellas");
             estrella.setImageResource(R.drawable.ic_star_gold_24dp);
         }
     }
