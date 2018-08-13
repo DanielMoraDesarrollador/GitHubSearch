@@ -13,7 +13,8 @@
         android:layout_height="0dp"
         android:layout_weight="1.5"
         android:background="@color/colorAccent"
-        android:padding="6dp"
+        android:layout_margin="8dp"
+        android:padding="3dp"
         android:scaleType="centerInside"
         android:src="@drawable/githubsearchlogo" />
 

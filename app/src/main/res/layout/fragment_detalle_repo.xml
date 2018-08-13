@@ -23,7 +23,6 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/placeholder"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.5" />
 
@@ -72,6 +71,7 @@
             <TextView
                 android:id="@+id/nombre_propietario"
                 style="@style/StyleTextoDetalles"
+                android:textStyle="bold"
                 tools:text="Nombre propietario" />
 
             <TextView
@@ -83,7 +83,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_star_gold_24dp"/>
+                android:src="@drawable/ic_star_gold_24dp" />
+
             <TextView
                 android:id="@+id/cantidad_estrellas_detalle"
                 style="@style/StyleTextoDetalles"

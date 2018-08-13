@@ -52,6 +52,7 @@ public class FragmentDetalleRepo extends Fragment {
 
         Picasso.get()
                 .load(repositorio.getPropietarioRepo().getImagenURL())
+                .placeholder(R.drawable.placeholder)
                 .into(imageView);
         nombreRepo.setText(repositorio.getNombreRepo());
         nombrePropietario.setText("Propietario: " + repositorio.getPropietarioRepo().getUsuario());
