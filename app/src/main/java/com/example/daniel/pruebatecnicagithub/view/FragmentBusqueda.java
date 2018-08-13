@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.example.daniel.pruebatecnicagithub.R;
 import com.example.daniel.pruebatecnicagithub.controller.ControllerRepositorio;
+import com.example.daniel.pruebatecnicagithub.controller.RoomControllerRepo;
 import com.example.daniel.pruebatecnicagithub.model.adapter.AdapterBusqueda;
 import com.example.daniel.pruebatecnicagithub.model.pojo.Repositorio;
 import com.example.daniel.pruebatecnicagithub.utils.ResultListener;
@@ -89,6 +90,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
             }
         });
 
+        obtenerBusqueda();
         return view;
     }
 
@@ -107,10 +109,23 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
     }
 
     private void obtenerBusqueda() {
+        final RoomControllerRepo roomControllerRepo = new RoomControllerRepo(getContext());
         controller.obtenerBusquedaRepo(editTextBusqueda.getText().toString(), new ResultListener<List<Repositorio>>() {
             @Override
             public void finish(List<Repositorio> resultado) {
-                adapterBusqueda.obtenerRepos(resultado);
+                if (resultado != null) {
+                    adapterBusqueda.obtenerRepos(resultado);
+                    roomControllerRepo.insertarRepositorios(resultado);
+                } else {
+                    roomControllerRepo.obtenerRepositorios(new ResultListener<List<Repositorio>>() {
+                        @Override
+                        public void finish(List<Repositorio> resultado) {
+                            if (resultado != null) {
+                                adapterBusqueda.obtenerRepos(resultado);
+                            }
+                        }
+                    });
+                }
             }
         });
     }
