@@ -27,7 +27,7 @@ public class Repositorio implements Serializable {
     @SerializedName("owner")
     private PropietarioRepo propietarioRepo;
 
-    @Ignore
+    @ColumnInfo(name = "descripcion")
     @SerializedName("description")
     private String descripcion;
 
@@ -35,11 +35,11 @@ public class Repositorio implements Serializable {
     @SerializedName("stargazers_count")
     private String cantidadDeEstrellas;
 
-    @Ignore
+    @ColumnInfo(name = "lenguaje")
     @SerializedName("language")
     private String lenguaje;
 
-    @Ignore
+    @ColumnInfo(name = "forks")
     @SerializedName("forks_count")
     private String cantidadDeForks;
 
@@ -84,6 +84,18 @@ public class Repositorio implements Serializable {
 
     public void setCantidadDeEstrellas(String cantidadDeEstrellas) {
         this.cantidadDeEstrellas = cantidadDeEstrellas;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setLenguaje(String lenguaje) {
+        this.lenguaje = lenguaje;
+    }
+
+    public void setCantidadDeForks(String cantidadDeForks) {
+        this.cantidadDeForks = cantidadDeForks;
     }
 
     @Override

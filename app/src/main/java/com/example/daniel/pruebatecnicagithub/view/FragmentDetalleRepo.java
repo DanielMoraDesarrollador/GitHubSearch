@@ -50,12 +50,20 @@ public class FragmentDetalleRepo extends Fragment {
         Bundle bundle = getArguments();
         repositorio = (Repositorio) bundle.getSerializable(REPO_RECIBIDO);
 
-        Picasso.get()
-                .load(repositorio.getPropietarioRepo().getImagenURL())
-                .placeholder(R.drawable.placeholder)
-                .into(imageView);
+        try {
+            Picasso.get()
+                    .load(repositorio.getPropietarioRepo().getImagenURL())
+                    .placeholder(R.drawable.placeholder)
+                    .into(imageView);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
         nombreRepo.setText(repositorio.getNombreRepo());
-        nombrePropietario.setText("Propietario: " + repositorio.getPropietarioRepo().getUsuario());
+        try {
+            nombrePropietario.setText("Propietario: " + repositorio.getPropietarioRepo().getUsuario());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
         lenguaje.setText("Lenguaje: " + repositorio.getLenguaje());
         cantidadEstrellas.setText(repositorio.getCantidadDeEstrellas());
         cantidadForks.setText("Forks: " + repositorio.getCantidadDeForks());

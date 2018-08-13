@@ -89,8 +89,17 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
             }
         });
 
-        obtenerBusqueda();
+        cargarRepositoriosDeRoom();
         return view;
+    }
+
+    private void cargarRepositoriosDeRoom() {
+        controller.obtenerTodosLosRepositorios(new ResultListener<List<Repositorio>>() {
+            @Override
+            public void finish(List<Repositorio> resultado) {
+                adapterBusqueda.obtenerRepos(resultado);
+            }
+        });
     }
 
     @Override
@@ -109,24 +118,26 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
 
     private void obtenerBusqueda() {
         final RoomControllerRepo roomControllerRepo = new RoomControllerRepo(getContext());
-        controller.obtenerBusquedaRepo(editTextBusqueda.getText().toString(), new ResultListener<List<Repositorio>>() {
-            @Override
-            public void finish(List<Repositorio> resultado) {
-                if (resultado != null) {
-                    adapterBusqueda.obtenerRepos(resultado);
-                    roomControllerRepo.insertarRepositorios(resultado);
-                } else {
-                    roomControllerRepo.obtenerRepositorios(new ResultListener<List<Repositorio>>() {
-                        @Override
-                        public void finish(List<Repositorio> resultado) {
-                            if (resultado != null) {
-                                adapterBusqueda.obtenerRepos(resultado);
+        if (!(editTextBusqueda.getText().toString().isEmpty())) {
+            controller.obtenerBusquedaRepo(editTextBusqueda.getText().toString(), new ResultListener<List<Repositorio>>() {
+                @Override
+                public void finish(List<Repositorio> resultado) {
+                    if (resultado != null) {
+                        adapterBusqueda.obtenerRepos(resultado);
+                        roomControllerRepo.insertarRepositorios(resultado);
+                    } else {
+                        roomControllerRepo.obtenerRepositorios(new ResultListener<List<Repositorio>>() {
+                            @Override
+                            public void finish(List<Repositorio> resultado) {
+                                if (resultado != null) {
+                                    adapterBusqueda.obtenerRepos(resultado);
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
 

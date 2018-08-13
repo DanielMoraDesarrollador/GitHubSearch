@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.example.daniel.pruebatecnicagithub.model.dao.DaoRepositorio;
+import com.example.daniel.pruebatecnicagithub.model.dao.RepositorioDaoUtils;
 import com.example.daniel.pruebatecnicagithub.model.pojo.Repositorio;
 import com.example.daniel.pruebatecnicagithub.utils.ResultListener;
 
@@ -24,7 +25,7 @@ public class ControllerRepositorio {
         this.daoRepositorio = new DaoRepositorio();
         this.sort = "stars";
         this.order = "desc";
-        this.per_page="50";
+        this.per_page = "50";
     }
 
     public void obtenerBusquedaRepo(String stringEditText, final ResultListener<List<Repositorio>> resultListenerBusqueda) {
@@ -34,7 +35,7 @@ public class ControllerRepositorio {
                 public void finish(List<Repositorio> resultado) {
                     resultListenerBusqueda.finish(resultado);
                 }
-            }, sort, order,per_page);
+            }, sort, order, per_page);
         } else {
             resultListenerBusqueda.finish(null);
         }
@@ -44,5 +45,15 @@ public class ControllerRepositorio {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
+
+    public void obtenerTodosLosRepositorios(final ResultListener<List<Repositorio>> resultListener) {
+        RepositorioDaoUtils repositorioDaoUtils = new RepositorioDaoUtils(context);
+        repositorioDaoUtils.obtenerListaRepos(new ResultListener<List<Repositorio>>() {
+            @Override
+            public void finish(List<Repositorio> resultado) {
+                resultListener.finish(resultado);
+            }
+        });
     }
 }
