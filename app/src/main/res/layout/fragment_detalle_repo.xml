@@ -79,16 +79,26 @@
                 style="@style/StyleTextoDetalles"
                 tools:text="lenguaje" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_star_gold_24dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/cantidad_estrellas_detalle"
-                style="@style/StyleTextoDetalles"
-                tools:text="cantidad de estrellas" />
+                <TextView
+                    android:id="@+id/cantidad_estrellas_detalle"
+                    style="@style/StyleTextoDetalles"
+                    android:layout_width="wrap_content"
+                    tools:text="cantidad de estrellas" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_star_gold_24dp" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/cantidad_forks_detalle"
@@ -98,7 +108,7 @@
             <TextView
                 android:id="@+id/descripcion"
                 style="@style/StyleTextoDetalles"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold|italic"
                 tools:text="descripcion" />
 

@@ -57,7 +57,7 @@ public class FragmentDetalleRepo extends Fragment {
         nombreRepo.setText(repositorio.getNombreRepo());
         nombrePropietario.setText("Propietario: " + repositorio.getPropietarioRepo().getUsuario());
         lenguaje.setText("Lenguaje: " + repositorio.getLenguaje());
-        cantidadEstrellas.setText(repositorio.getCantidadDeEstrellas() + " Estrellas");
+        cantidadEstrellas.setText(repositorio.getCantidadDeEstrellas());
         cantidadForks.setText("Forks: " + repositorio.getCantidadDeForks());
         descripcion.setText(repositorio.getDescripcion());
 

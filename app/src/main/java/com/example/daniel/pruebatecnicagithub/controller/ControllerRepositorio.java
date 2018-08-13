@@ -16,6 +16,7 @@ public class ControllerRepositorio {
     private DaoRepositorio daoRepositorio;
     private String sort;
     private String order;
+    private String per_page;
 
 
     public ControllerRepositorio(Context context) {
@@ -23,6 +24,7 @@ public class ControllerRepositorio {
         this.daoRepositorio = new DaoRepositorio();
         this.sort = "stars";
         this.order = "desc";
+        this.per_page="50";
     }
 
     public void obtenerBusquedaRepo(String stringEditText, final ResultListener<List<Repositorio>> resultListenerBusqueda) {
@@ -32,7 +34,7 @@ public class ControllerRepositorio {
                 public void finish(List<Repositorio> resultado) {
                     resultListenerBusqueda.finish(resultado);
                 }
-            }, sort, order);
+            }, sort, order,per_page);
         } else {
             resultListenerBusqueda.finish(null);
         }

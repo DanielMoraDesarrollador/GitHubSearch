@@ -37,7 +37,6 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
     private RecyclerView recyclerViewBusqueda;
     private LinearLayoutManager linearLayoutManagerBusqueda;
     private AdapterBusqueda adapterBusqueda;
-    private List<Repositorio> listaRepos;
 
     private ControllerRepositorio controller;
     private NotificadorActivities notificadorActivities;

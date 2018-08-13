@@ -9,5 +9,8 @@ import retrofit2.http.Query;
 public interface ServiceRepositorio {
 
     @GET("search/repositories")
-    Call<ContenedorRepositorio> obtenerRepositorios(@Query("q") String EditText, @Query("sort") String stars, @Query("order") String desc);
+    Call<ContenedorRepositorio> obtenerRepositorios(@Query("q") String EditText,
+                                                    @Query("sort") String stars,
+                                                    @Query("order") String desc,
+                                                    @Query("per_page")String cantidadElementos);
 }
