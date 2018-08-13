@@ -7,6 +7,9 @@ import com.example.daniel.pruebatecnicagithub.R;
 
 public class ActivityDetalle extends AppCompatActivity {
 
+    public static final String REPO_KEY = "repo_key";
+    public static final String POSICION = "posicion_key";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -39,6 +39,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
     private List<Repositorio> listaRepos;
 
     private ControllerRepositorio controller;
+    private NotificadorActivities notificadorActivities;
 
 
     @Override
@@ -111,5 +112,10 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
 
     @Override
     public void notificarCeldaCliqueada(List<Repositorio> repositorios, int posicion) {
+        notificadorActivities.notificarRepo(repositorios, posicion);
+    }
+
+    public interface NotificadorActivities {
+        public void notificarRepo(List<Repositorio> repositorios, int posicion);
     }
 }
