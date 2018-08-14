@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="8dp"
+        android:layout_margin="6dp"
         android:ellipsize="marquee"
         android:focusable="false"
         android:fontFamily="sans-serif-condensed"
@@ -29,15 +29,16 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_below="@+id/nombre_repo"
-        android:layout_marginLeft="8dp" />
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/cantidad_estrellas" />
 
     <TextView
         android:id="@+id/cantidad_estrellas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nombre_repo"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@+id/imagen_estrella"
         android:textSize="20sp"
         android:textStyle="italic" />
 </RelativeLayout>

@@ -65,7 +65,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         setAdapterLinear(recyclerViewBusqueda, linearLayoutManagerBusqueda, adapterBusqueda);
 
         controller = new ControllerRepositorio(getActivity());
-        
+
         editTextBusqueda.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gitfondo2"
-    tools:context=".view.FragmentDetalleRepo">
+    tools:context=".view.FragmentDetalleRepo"
+    >
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

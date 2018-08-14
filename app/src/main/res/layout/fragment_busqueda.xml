@@ -7,34 +7,33 @@
     android:weightSum="10"
     tools:context=".view.FragmentBusqueda">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="10"
         android:focusableInTouchMode="true">
 
         <EditText
             android:id="@+id/editText_busqueda"
-            android:layout_width="0dp"
+            android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="9"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:elevation="10dp"
-            android:hint="@string/IngreseTexto"
+            android:hint="@string/search"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1" />
 
         <ImageView
             android:id="@+id/logo_busqueda"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="12dp"
             android:elevation="10dp"
+            android:layout_alignParentRight="true"
             android:src="@drawable/ic_search_black_24dp" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
