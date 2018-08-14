@@ -47,10 +47,6 @@ public class RepositorioDaoUtils {
                 if (repositorios1 != null || repositorios1.size() > 0)
                     appDatabase.repositorioDao().eliminarRepositorios();
                 appDatabase.repositorioDao().insertarRepos(repositorios);
-           /* } else {
-                //  appDatabase.repositorioDao().eliminarRepositorios();
-                appDatabase.repositorioDao().insertarRepos(repositorios);
-           */
             }
             return null;
         }

@@ -24,6 +24,10 @@ import com.example.daniel.pruebatecnicagithub.model.adapter.AdapterBusqueda;
 import com.example.daniel.pruebatecnicagithub.model.pojo.Repositorio;
 import com.example.daniel.pruebatecnicagithub.utils.ResultListener;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -89,6 +93,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
             }
         });
 
+        cargarStringDeArchivo(getContext());
         cargarRepositoriosDeRoom();
         return view;
     }
@@ -119,6 +124,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
     private void obtenerBusqueda() {
         final RoomControllerRepo roomControllerRepo = new RoomControllerRepo(getContext());
         if (!(editTextBusqueda.getText().toString().isEmpty())) {
+            guardarStringEnArchivo(editTextBusqueda.getText().toString(), getContext());
             controller.obtenerBusquedaRepo(editTextBusqueda.getText().toString(), new ResultListener<List<Repositorio>>() {
                 @Override
                 public void finish(List<Repositorio> resultado) {
@@ -138,6 +144,44 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
                 }
             });
         }
+    }
+
+    private void guardarStringEnArchivo(String string, Context fileContext) {
+        String FILENAME = "ultima busqueda";
+        String string1 = string;
+
+        FileOutputStream fos = null;
+        try {
+            fos = fileContext.openFileOutput(FILENAME, fileContext.MODE_PRIVATE);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            fos.write(string.getBytes());
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void cargarStringDeArchivo(Context context) {
+        String FILENAME = "ultima busqueda";
+        String value = "";
+        FileInputStream fis;
+
+        try {
+            fis = context.openFileInput(FILENAME);
+            byte[] input = new byte[fis.available()];
+            while (fis.read(input) != -1) {
+                value += new String(input);
+            }
+            fis.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        editTextBusqueda.setText(value);
     }
 
 
