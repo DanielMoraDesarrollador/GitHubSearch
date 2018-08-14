@@ -12,5 +12,5 @@ public interface ServiceRepositorio {
     Call<ContenedorRepositorio> obtenerRepositorios(@Query("q") String EditText,
                                                     @Query("sort") String stars,
                                                     @Query("order") String desc,
-                                                    @Query("per_page")String cantidadElementos);
+                                                    @Query("per_page") String cantidadElementos);
 }

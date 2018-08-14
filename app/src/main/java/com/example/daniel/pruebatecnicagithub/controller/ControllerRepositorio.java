@@ -19,7 +19,6 @@ public class ControllerRepositorio {
     private String order;
     private String per_page;
 
-
     public ControllerRepositorio(Context context) {
         this.context = context;
         this.daoRepositorio = new DaoRepositorio();
@@ -28,7 +27,9 @@ public class ControllerRepositorio {
         this.per_page = "50";
     }
 
-    public void obtenerBusquedaRepo(String stringEditText, final ResultListener<List<Repositorio>> resultListenerBusqueda) {
+    public void obtenerBusquedaRepo(String stringEditText,
+                                    final ResultListener<List<Repositorio>> resultListenerBusqueda) {
+
         if (hayInternet()) {
             daoRepositorio.obtenerBusquedaRepo(stringEditText, new ResultListener<List<Repositorio>>() {
                 @Override

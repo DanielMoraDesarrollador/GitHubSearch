@@ -8,7 +8,7 @@ import android.content.Context;
 import com.example.daniel.pruebatecnicagithub.model.pojo.Repositorio;
 
 
-@Database(entities = {Repositorio.class},version = 1)
+@Database(entities = {Repositorio.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "database-name";
@@ -18,7 +18,9 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE_NAME).build();
+            INSTANCE = Room.databaseBuilder(
+                    context.getApplicationContext(),
+                    AppDatabase.class, DATABASE_NAME).build();
         }
         return INSTANCE;
     }

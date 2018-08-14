@@ -55,15 +55,6 @@ public class AdapterBusqueda extends RecyclerView.Adapter {
         }
     }
 
-    public void agregarRepos(List<Repositorio> resultado) {
-        for (Repositorio repositorioAAgregar : resultado) {
-            if (!this.listaRepos.contains(repositorioAAgregar)) {
-                this.listaRepos.add(repositorioAAgregar);
-            }
-            notifyDataSetChanged();
-        }
-    }
-
     public void obtenerRepos(List<Repositorio> resultado) {
         if (resultado != null) {
             listaRepos = resultado;

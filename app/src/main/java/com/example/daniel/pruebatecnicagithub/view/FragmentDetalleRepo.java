@@ -3,7 +3,6 @@ package com.example.daniel.pruebatecnicagithub.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,6 @@ public class FragmentDetalleRepo extends Fragment {
 
     private Repositorio repositorio;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,7 +51,7 @@ public class FragmentDetalleRepo extends Fragment {
         try {
             Picasso.get()
                     .load(repositorio.getPropietarioRepo().getImagenURL())
-                    .placeholder(R.drawable.placeholder)
+                    .placeholder(R.drawable.place1)
                     .into(imageView);
         } catch (NullPointerException e) {
             e.printStackTrace();

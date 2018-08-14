@@ -18,11 +18,9 @@ public class ActivityDetalle extends AppCompatActivity {
     public static final String REPO_KEY = "repo_key";
     public static final String POSICION = "posicion_key";
 
-    private FragmentManager fragmentManager;
     private List<FragmentDetalleRepo> fragmentDetalleRepos;
     private List<Repositorio> listaReposRecibidos;
     private ViewPager viewPagerRepo;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +28,18 @@ public class ActivityDetalle extends AppCompatActivity {
         setContentView(R.layout.activity_detalle);
 
         viewPagerRepo = findViewById(R.id.viewPager_repos);
+
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+
         listaReposRecibidos = (List<Repositorio>) bundle.getSerializable(REPO_KEY);
+
         crearListaDeFragments();
-        FragmentDetalleRepoPAdapter fragmentDetalleRepoPAdapter = new FragmentDetalleRepoPAdapter(getSupportFragmentManager(), fragmentDetalleRepos);
+
+        FragmentDetalleRepoPAdapter fragmentDetalleRepoPAdapter = new FragmentDetalleRepoPAdapter(
+                getSupportFragmentManager(),
+                fragmentDetalleRepos);
+
         viewPagerRepo.setAdapter(fragmentDetalleRepoPAdapter);
         viewPagerRepo.setPageTransformer(true, new DepthPageTransformer());
 

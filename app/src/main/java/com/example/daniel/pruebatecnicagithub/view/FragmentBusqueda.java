@@ -3,7 +3,6 @@ package com.example.daniel.pruebatecnicagithub.view;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -56,7 +55,10 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         editTextBusqueda = view.findViewById(R.id.editText_busqueda);
         imagenBusqueda = view.findViewById(R.id.logo_busqueda);
         adapterBusqueda = new AdapterBusqueda(getActivity(), this);
-        linearLayoutManagerBusqueda = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+
+        linearLayoutManagerBusqueda = new LinearLayoutManager(getActivity(),
+                LinearLayoutManager.VERTICAL, false);
+
         recyclerViewBusqueda = view.findViewById(R.id.recycler_busqueda);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getActivity()
                 , linearLayoutManagerBusqueda.getOrientation());
@@ -80,7 +82,6 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
             }
         });
 
-
         imagenBusqueda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,10 +94,9 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
 
         cargarStringDeArchivo(getContext());
         cargarRepositoriosDeRoom();
+
         return view;
     }
-
-
 
     private void cargarRepositoriosDeRoom() {
         controller.obtenerTodosLosRepositorios(new ResultListener<List<Repositorio>>() {

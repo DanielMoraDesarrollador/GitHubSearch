@@ -5,26 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gitfondo2"
-    tools:context=".view.FragmentDetalleRepo"
-    >
+    tools:context=".view.FragmentDetalleRepo">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/gitfondo2">
+        android:layout_height="275dp"
+        android:background="@drawable/descarga"
+        android:elevation="10dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@color/colorAccent"
+            app:contentScrim="@color/colorAccentTransparente"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/imagen_detalle"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:src="@drawable/placeholder"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:elevation="10dp"
+                android:src="@drawable/place1"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.5" />
 
@@ -32,7 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="bottom"
-                android:background="@color/colorAccentTransparente"
+                android:background="@color/colorPrimaryDark"
+                android:elevation="10dp"
                 app:layout_collapseMode="pin">
 
                 <TextView
@@ -55,7 +58,6 @@
                     tools:text="Nombre Repositorio" />
 
             </android.support.v7.widget.Toolbar>
-
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -68,7 +70,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
 
             <TextView
                 android:id="@+id/nombre_propietario"
@@ -110,11 +111,11 @@
             <TextView
                 android:id="@+id/descripcion"
                 style="@style/StyleTextoDetalles"
-                android:textSize="22sp"
+                android:elevation="10dp"
+                android:textSize="20sp"
                 android:textStyle="bold|italic"
                 tools:text="descripcion" />
 
         </LinearLayout>
-
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

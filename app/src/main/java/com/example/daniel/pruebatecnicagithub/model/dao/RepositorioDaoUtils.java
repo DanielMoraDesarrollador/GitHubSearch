@@ -1,7 +1,6 @@
 package com.example.daniel.pruebatecnicagithub.model.dao;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteConstraintException;
 import android.os.AsyncTask;
 
 import com.example.daniel.pruebatecnicagithub.model.pojo.Repositorio;
@@ -16,7 +15,6 @@ public class RepositorioDaoUtils {
     private AppDatabase appDatabase;
 
     public RepositorioDaoUtils(Context context) {
-
         this.context = context;
         this.appDatabase = AppDatabase.getInstance(context);
     }
@@ -30,7 +28,6 @@ public class RepositorioDaoUtils {
         ObtenerListaReposTask obtenerListaReposTask = new ObtenerListaReposTask(resultListenerController);
         obtenerListaReposTask.execute();
     }
-
 
     private class InsertarListaReposTask extends AsyncTask<Void, Void, Void> {
 

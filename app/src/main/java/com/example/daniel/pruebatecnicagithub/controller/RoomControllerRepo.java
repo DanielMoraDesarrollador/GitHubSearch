@@ -45,5 +45,4 @@ public class RoomControllerRepo {
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         return networkInfo != null && networkInfo.isConnectedOrConnecting();
     }
-
 }

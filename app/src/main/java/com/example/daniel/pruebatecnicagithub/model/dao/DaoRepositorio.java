@@ -29,8 +29,13 @@ public class DaoRepositorio {
         serviceRepositorio = retrofit.create(ServiceRepositorio.class);
     }
 
-    public void obtenerBusquedaRepo(String stringEditText, final ResultListener<List<Repositorio>> resultListenerDelController, String stars, String order,String cantidadElementos) {
-        Call<ContenedorRepositorio> call = serviceRepositorio.obtenerRepositorios(stringEditText,stars,order,cantidadElementos);
+    public void obtenerBusquedaRepo(String stringEditText,
+                                    final ResultListener<List<Repositorio>> resultListenerDelController,
+                                    String stars,
+                                    String order,
+                                    String cantidadElementos) {
+
+        Call<ContenedorRepositorio> call = serviceRepositorio.obtenerRepositorios(stringEditText, stars, order, cantidadElementos);
         call.enqueue(new Callback<ContenedorRepositorio>() {
             @Override
             public void onResponse(Call<ContenedorRepositorio> call, Response<ContenedorRepositorio> response) {

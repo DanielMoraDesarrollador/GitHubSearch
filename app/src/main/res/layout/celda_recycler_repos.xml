@@ -2,17 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="50dp"
     android:background="@drawable/gitfondo2"
     android:elevation="10dp">
-
 
     <TextView
         android:id="@+id/nombre_repo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="6dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="2dp"
         android:ellipsize="marquee"
         android:focusable="false"
         android:fontFamily="sans-serif-condensed"
@@ -20,25 +20,25 @@
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         tools:text="nombreRepo" />
 
     <ImageView
         android:id="@+id/imagen_estrella"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/nombre_repo"
-        android:layout_marginRight="8dp"
-        android:layout_toLeftOf="@+id/cantidad_estrellas" />
+        android:layout_marginRight="20dp" />
 
     <TextView
         android:id="@+id/cantidad_estrellas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nombre_repo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="8dp"
-        android:textSize="20sp"
-        android:textStyle="italic" />
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/imagen_estrella"
+        android:textSize="16sp"
+        android:textStyle="italic|bold" />
 </RelativeLayout>
