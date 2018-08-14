@@ -3,6 +3,7 @@ package com.example.daniel.pruebatecnicagithub.view;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -64,11 +65,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         setAdapterLinear(recyclerViewBusqueda, linearLayoutManagerBusqueda, adapterBusqueda);
 
         controller = new ControllerRepositorio(getActivity());
-        editTextBusqueda.requestFocus();
-
-        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
-
+        
         editTextBusqueda.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -82,6 +79,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
                 return false;
             }
         });
+
 
         imagenBusqueda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +95,8 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         cargarRepositoriosDeRoom();
         return view;
     }
+
+
 
     private void cargarRepositoriosDeRoom() {
         controller.obtenerTodosLosRepositorios(new ResultListener<List<Repositorio>>() {
