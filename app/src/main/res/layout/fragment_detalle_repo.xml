@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gitfondo2"
+    android:background="@color/colorAccentTransparente"
     tools:context=".view.FragmentDetalleRepo">
 
     <android.support.design.widget.AppBarLayout
@@ -16,7 +16,7 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@color/colorAccentTransparente"
+            app:contentScrim="@color/blanco"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <com.mikhaellopez.circularimageview.CircularImageView
@@ -45,7 +45,7 @@
                     android:layout_margin="4dp"
                     android:layout_marginLeft="?attr/actionBarSize"
                     android:layout_marginRight="?attr/actionBarSize"
-                    android:background="@color/colorAccentTransparente"
+                    android:background="@color/colorPrimaryDark"
                     android:ellipsize="marquee"
                     android:focusable="false"
                     android:fontFamily="sans-serif-condensed"

@@ -11,6 +11,8 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -66,6 +68,8 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
 
         setAdapterLinear(recyclerViewBusqueda, linearLayoutManagerBusqueda, adapterBusqueda);
 
+        runAnimation(recyclerViewBusqueda);
+
         controller = new ControllerRepositorio(getActivity());
 
         editTextBusqueda.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -96,6 +100,13 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         cargarRepositoriosDeRoom();
 
         return view;
+    }
+
+    private void runAnimation(RecyclerView recyclerViewBusqueda) {
+        Context context = recyclerViewBusqueda.getContext();
+        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_slide_right);
+        recyclerViewBusqueda.setLayoutAnimation(layoutAnimationController);
+        recyclerViewBusqueda.scheduleLayoutAnimation();
     }
 
     private void cargarRepositoriosDeRoom() {
