@@ -16,7 +16,7 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@color/blanco"
+            app:contentScrim="@color/cardview_shadow_end_color"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <com.mikhaellopez.circularimageview.CircularImageView
@@ -53,7 +53,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     tools:text="Nombre Repositorio" />
 
@@ -112,7 +112,7 @@
                 android:id="@+id/descripcion"
                 style="@style/StyleTextoDetalles"
                 android:elevation="10dp"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold|italic"
                 tools:text="descripcion" />
 

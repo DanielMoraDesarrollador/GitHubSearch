@@ -3,6 +3,7 @@ package com.example.daniel.pruebatecnicagithub.view;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -67,9 +68,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         recyclerViewBusqueda.addItemDecoration(dividerItemDecoration);
 
         setAdapterLinear(recyclerViewBusqueda, linearLayoutManagerBusqueda, adapterBusqueda);
-
-        runAnimation(recyclerViewBusqueda);
-
+        
         controller = new ControllerRepositorio(getActivity());
 
         editTextBusqueda.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -98,7 +97,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
 
         cargarStringDeArchivo(getContext());
         cargarRepositoriosDeRoom();
-
+        runAnimation(recyclerViewBusqueda);
         return view;
     }
 
