@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccentTransparente"
+    android:background="@color/colorAccentTransparente2"
     tools:context=".view.FragmentDetalleRepo">
 
     <android.support.design.widget.AppBarLayout
@@ -25,16 +25,16 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
-                android:elevation="10dp"
                 android:src="@drawable/place1"
                 app:layout_collapseMode="parallax"
+                app:civ_border_color="@color/blanco"
                 app:layout_collapseParallaxMultiplier="0.5" />
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="bottom"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccentTransparente"
                 android:elevation="10dp"
                 app:layout_collapseMode="pin">
 
@@ -45,7 +45,7 @@
                     android:layout_margin="4dp"
                     android:layout_marginLeft="?attr/actionBarSize"
                     android:layout_marginRight="?attr/actionBarSize"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorAccentTransparente"
                     android:ellipsize="marquee"
                     android:focusable="false"
                     android:fontFamily="sans-serif-condensed"
@@ -53,7 +53,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
-                    android:textSize="20sp"
+                    android:textSize="21sp"
                     android:textStyle="bold"
                     tools:text="Nombre Repositorio" />
 
@@ -74,18 +74,19 @@
             <TextView
                 android:id="@+id/nombre_propietario"
                 style="@style/StyleTextoDetalles"
+                android:gravity="center"
                 android:textStyle="bold"
                 tools:text="Nombre propietario" />
 
             <TextView
                 android:id="@+id/lenguaje"
                 style="@style/StyleTextoDetalles"
+                android:layout_marginTop="32dp"
                 tools:text="lenguaje" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
@@ -95,10 +96,11 @@
                     tools:text="cantidad de estrellas" />
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:elevation="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_gravity="bottom"
                     android:src="@drawable/ic_star_gold_24dp" />
 
             </LinearLayout>
@@ -111,6 +113,7 @@
             <TextView
                 android:id="@+id/descripcion"
                 style="@style/StyleTextoDetalles"
+                android:layout_marginLeft="8dp"
                 android:elevation="10dp"
                 android:textSize="16sp"
                 android:textStyle="bold|italic"
