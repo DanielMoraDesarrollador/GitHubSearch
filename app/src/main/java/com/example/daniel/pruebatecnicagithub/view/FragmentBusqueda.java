@@ -3,8 +3,7 @@ package com.example.daniel.pruebatecnicagithub.view;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,8 +33,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,7 +50,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
     private NotificadorActivities notificadorActivities;
 
     private ProgressBar progressBar;
-    private Timer timer;
+    private ImageView sinConexion;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,6 +62,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         imagenBusqueda = view.findViewById(R.id.logo_busqueda);
 
         progressBar = view.findViewById(R.id.progressBar);
+        sinConexion = view.findViewById(R.id.sin_conexion);
 
         adapterBusqueda = new AdapterBusqueda(getActivity(), this);
 
@@ -122,6 +120,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
             @Override
             public void finish(List<Repositorio> resultado) {
                 adapterBusqueda.obtenerRepos(resultado);
+                sinConexion.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -152,6 +151,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
                         adapterBusqueda.obtenerRepos(resultado);
                         roomControllerRepo.insertarRepositorios(resultado);
                         progressBar.setVisibility(View.GONE);
+                        sinConexion.setVisibility(View.GONE);
                     } else {
                         roomControllerRepo.obtenerRepositorios(new ResultListener<List<Repositorio>>() {
                             @Override
