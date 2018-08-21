@@ -3,6 +3,7 @@ package com.example.daniel.pruebatecnicagithub.view;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
@@ -18,6 +19,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.daniel.pruebatecnicagithub.R;
@@ -32,6 +34,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,6 +52,8 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
     private ControllerRepositorio controller;
     private NotificadorActivities notificadorActivities;
 
+    private ProgressBar progressBar;
+    private Timer timer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,6 +63,9 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
 
         editTextBusqueda = view.findViewById(R.id.editText_busqueda);
         imagenBusqueda = view.findViewById(R.id.logo_busqueda);
+
+        progressBar = view.findViewById(R.id.progressBar);
+
         adapterBusqueda = new AdapterBusqueda(getActivity(), this);
 
         linearLayoutManagerBusqueda = new LinearLayoutManager(getActivity(),
@@ -68,7 +77,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
         recyclerViewBusqueda.addItemDecoration(dividerItemDecoration);
 
         setAdapterLinear(recyclerViewBusqueda, linearLayoutManagerBusqueda, adapterBusqueda);
-        
+
         controller = new ControllerRepositorio(getActivity());
 
         editTextBusqueda.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -134,6 +143,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
     private void obtenerBusqueda() {
         final RoomControllerRepo roomControllerRepo = new RoomControllerRepo(getContext());
         if (!(editTextBusqueda.getText().toString().isEmpty())) {
+            progressBar.setVisibility(View.VISIBLE);
             guardarStringEnArchivo(editTextBusqueda.getText().toString(), getContext());
             controller.obtenerBusquedaRepo(editTextBusqueda.getText().toString(), new ResultListener<List<Repositorio>>() {
                 @Override
@@ -141,12 +151,14 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
                     if (resultado != null) {
                         adapterBusqueda.obtenerRepos(resultado);
                         roomControllerRepo.insertarRepositorios(resultado);
+                        progressBar.setVisibility(View.GONE);
                     } else {
                         roomControllerRepo.obtenerRepositorios(new ResultListener<List<Repositorio>>() {
                             @Override
                             public void finish(List<Repositorio> resultado) {
                                 if (resultado != null) {
                                     adapterBusqueda.obtenerRepos(resultado);
+                                    progressBar.setVisibility(View.GONE);
                                 }
                             }
                         });

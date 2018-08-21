@@ -26,8 +26,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/place1"
-                app:layout_collapseMode="parallax"
                 app:civ_border_color="@color/blanco"
+                app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.5" />
 
             <android.support.v7.widget.Toolbar
@@ -35,7 +35,6 @@
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="bottom"
                 android:background="@color/colorAccentTransparente"
-                android:elevation="10dp"
                 app:layout_collapseMode="pin">
 
                 <TextView
@@ -50,6 +49,7 @@
                     android:focusable="false"
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
+                    android:letterSpacing="0.125"
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
@@ -98,9 +98,9 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:elevation="10dp"
-                    android:layout_marginLeft="8dp"
                     android:layout_gravity="bottom"
+                    android:layout_marginLeft="8dp"
+                    android:elevation="10dp"
                     android:src="@drawable/ic_star_gold_24dp" />
 
             </LinearLayout>
