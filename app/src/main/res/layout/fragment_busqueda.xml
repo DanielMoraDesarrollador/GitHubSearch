@@ -28,7 +28,6 @@
                 android:layout_marginLeft="16dp"
                 android:layout_toLeftOf="@+id/logo_busqueda"
                 android:layout_toRightOf="@+id/sin_conexion"
-
                 >
 
                 <EditText
@@ -60,11 +59,11 @@
                 android:layout_height="30dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginBottom="8dp"
-                android:visibility="gone"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/blanco"
-                android:src="@drawable/ic_cloud_off_black_24dp" />
+                android:src="@drawable/ic_cloud_off_black_24dp"
+                android:visibility="gone" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

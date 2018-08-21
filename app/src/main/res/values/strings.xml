@@ -6,4 +6,5 @@
     <string name="IngreseTexto">Ingrese el texto a buscar</string>
     <string name="github_search">GitHub Search</string>
     <string name="search">Search</string>
+    <string name="sin_conexion">Modo sin conexion</string>
 </resources>
