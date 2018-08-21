@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorGris</item>
+        <item name="colorPrimaryDark">@color/colorPrimarioVerde</item>
+        <item name="colorAccent">@color/colorGrisOscuro</item>
     </style>
 
     <style name="StyleTextoDetalles">
@@ -15,6 +15,20 @@
         <item name="android:layout_marginTop">24dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="StyleTitulo1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:focusable">false</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:letterSpacing">0.125</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

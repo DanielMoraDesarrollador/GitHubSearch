@@ -4,6 +4,7 @@ package com.example.daniel.pruebatecnicagithub.view;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -121,6 +122,7 @@ public class FragmentBusqueda extends Fragment implements AdapterBusqueda.Notifi
             public void finish(List<Repositorio> resultado) {
                 adapterBusqueda.obtenerRepos(resultado);
                 sinConexion.setVisibility(View.VISIBLE);
+                Snackbar.make(getView(),"Modo sin Conexion",Snackbar.LENGTH_LONG).show();
             }
         });
     }

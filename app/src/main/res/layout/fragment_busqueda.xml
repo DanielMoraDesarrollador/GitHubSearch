@@ -8,7 +8,6 @@
     android:weightSum="10"
     tools:context=".view.FragmentBusqueda">
 
-
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,11 +23,10 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="fill_parent"
                 android:layout_height="56dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="16dp"
                 android:layout_toLeftOf="@+id/logo_busqueda"
-                android:layout_toRightOf="@+id/sin_conexion"
-                >
+                android:layout_toRightOf="@+id/sin_conexion">
 
                 <EditText
                     android:id="@+id/editText_busqueda"
@@ -38,7 +36,6 @@
                     android:imeOptions="actionSearch"
                     android:inputType="text"
                     android:maxLines="1" />
-
 
             </android.support.design.widget.TextInputLayout>
 
@@ -90,10 +87,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/progressBar"
             android:layout_centerInParent="true"
-            android:padding="8dp">
+            android:layout_marginTop="6dp">
 
         </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
-
-
 </LinearLayout>

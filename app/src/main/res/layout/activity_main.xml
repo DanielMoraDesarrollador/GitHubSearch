@@ -12,17 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="56dp">
 
-
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/colorAccentTransparente"
+            app:contentScrim="@color/colorVerdeTransparente"
             app:layout_scrollFlags="scroll|enterAlways">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorPrimarioVerde"
                 android:elevation="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/githubsearchverde"
